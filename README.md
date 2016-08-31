@@ -1,24 +1,19 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### Things I will change in future:
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
+* Layout / Design
 
 * Configuration
 
-* Database creation
+* Databases
 
-* Database initialization
+#### Things I will add in future:
 
-* How to run the test suite
+* Admin panel
 
-* Services (job queues, cache servers, search engines, etc.)
+* Private chat (between two people)
 
-* Deployment instructions
+* Private chat secured by password (between more than two people)
 
-* ...
+* Emoticons
