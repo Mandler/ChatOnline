@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chat</title>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <meta name="current-user" id="<%= current_user.try(:id) %>">
+</head>
+
+<body>
+  <%= render 'layouts/top_menu' %>
+  <div class="page-content">
+    <div class="col-xs-12">
+      <%= yield %>
+    </div>
+  </div>
+</body>
+</html>

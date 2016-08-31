@@ -1,0 +1,8 @@
+<div class="<%= cookies.signed['user.id'] == message.user.id ? 'right-card' : 'left-card' %>">
+  <div class="card-block">
+    <div class="card-text">
+      <span class="text-muted"><%= message.user.name %> at <%= message.timestamp %> says<br></span>
+      <%= message.body %>
+    </div>
+  </div>
+</div>
