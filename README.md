@@ -2,7 +2,7 @@
 
 #### Things I will change in future:
 
-* Layout / Design
+* Layout / Design - under working
 
 * Configuration
 
