@@ -1,16 +1,17 @@
 <nav class="top-menu">
   <%= link_to "Online Rooms", root_url, class: 'navbar-brand' %>
   <ul class="nav navbar-nav pull-xs-right">
-    <li class="nav-item active">
-      <% if user_signed_in? %>
-      <li>
-        <%= link_to 'Logout', destroy_user_session_path, :method => :delete, class: "nav-link" %>
-      </li>
-      <% else %>
-      <li>
-        <%= link_to 'Login', new_user_session_path, class: "nav-link" %>
-      </li>
-      <% end %>
+    <% if user_signed_in? %>
+    <li class="nav-item">
+      <%= link_to "Hello #{current_user.name}!", edit_user_registration_path, class: "top-nav-link" %>
     </li>
+    <li class="nav-item">
+      <%= link_to 'Logout', destroy_user_session_path, :method => :delete, class: "top-nav-link" %>
+    </li>
+    <% else %>
+    <li class="nav-item">
+      <%= link_to 'Login', new_user_session_path, class: "top-nav-link" %>
+    </li>
+    <% end %>
   </ul>
 </nav>
