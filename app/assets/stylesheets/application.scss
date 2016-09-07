@@ -9,6 +9,26 @@ $secondary-color: #717171;
 $light-secondary-color: lighten($secondary-color, 50);
 $dark-secondary-color: darken($secondary-color, 10);
 
+// Extends
+%middle-inputs {
+  @extend .form-control;
+  text-align: center;
+  padding: 3px 5px;
+  color: $primary-color;
+  background-color: #FFF;
+  -webkit-text-fill-color: $primary-color !important;
+  -webkit-box-shadow:0 0 0 50px white inset;
+
+  &:focus, &:active {
+    outline: none;
+  }
+}
+
+// Changes in bootstrap
+.btn-primary {
+  background-color: $primary-color;
+}
+
 // Top menu
 .top-menu {
   @extend .navbar, .navbar-dark, .bg-primary;
@@ -39,6 +59,17 @@ $dark-secondary-color: darken($secondary-color, 10);
   margin-top: 25px;
   box-shadow: 0 0px 20px -5px #000;
   padding: 10px;
+
+  @include media-breakpoint-down(sm) {
+    width: 95%;
+  }
+}
+
+// Devise forms
+#new_user {
+  & input[type="email"], & input[type="password"], & input:-webkit-autofill {
+    @extend %middle-inputs;
+  }
 }
 
 // Messages
