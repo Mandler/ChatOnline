@@ -1,0 +1,15 @@
+%h1
+  = @chat_room.title
+  %small.header-text-muted
+    Created by: #{@chat_room.user.name}
+#messages{"data-chat-room-id" => "#{@chat_room.id}"}
+  - @chat_room.messages.each do |message|
+    = render partial: 'messages/all_messages', locals: {message: message}
+%hr/
+= form_for @message, url: '#' do |f|
+  = hidden_field_tag 'chat_room_id', @chat_room.id
+  .form-group
+    = f.label :body, "Message"
+    = f.text_field :body, class: 'form-control'
+    %small.text-muted From 2 to 1000 characters
+  = f.submit "Send", class: 'btn btn-primary btn-md'
