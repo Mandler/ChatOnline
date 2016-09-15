@@ -51,6 +51,11 @@ $dark-secondary-color: darken($secondary-color, 10);
       cursor: pointer;
     }
   }
+
+  .search-form-inline {
+    @extend .form-inline, .pull-xs-right;
+    padding: 5px 20px;
+  }
 }
 
 // Layout
