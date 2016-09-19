@@ -1,11 +1,7 @@
 class ChatRoomsController < ApplicationController
   def index
-    search_param = params[:search]
-    if search_param.present?
-      @chat_rooms = ChatRoom.where("title LIKE ?", "%#{search_param}%")
-    else
-      @chat_rooms = ChatRoom.all
-    end
+    @chat_rooms = ChatRoom.find_by_title_or_author(params[:search]) || ChatRoom.all
+    return  @chat_rooms
   end
 
   def new
