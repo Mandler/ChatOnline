@@ -12,7 +12,7 @@
       %li.nav-item
         = link_to 'Login', new_user_session_path, class: "top-nav-link"
 
-  = form_tag(root_path, method: "get", class: 'search-form-inline') do
-    = text_field_tag :search, nil, class: '.form-control', placeholder: 'Search Chat Room...'
-    = submit_tag "Search", class: 'btn btn-outline-secondary btn-sm'
-
+  - if user_signed_in?
+    = form_tag(root_path, method: "get", class: 'search-form-inline') do
+      = text_field_tag :search, nil, class: '.form-control', placeholder: 'Search Chat Room...'
+      = submit_tag "Search", class: 'btn btn-outline-secondary btn-sm'
