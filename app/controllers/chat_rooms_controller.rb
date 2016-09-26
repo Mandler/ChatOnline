@@ -1,7 +1,7 @@
 class ChatRoomsController < ApplicationController
   def index
     @chat_rooms = ChatRoom.find_by_title_or_author(params[:search]) || ChatRoom.all
-    return  @chat_rooms
+    # @chat_rooms = ChatRoom.find_by_person(current_user.id) To Test!
   end
 
   def new
