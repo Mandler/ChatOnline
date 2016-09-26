@@ -1,0 +1,14 @@
+// Extends
+%middle-inputs {
+  @extend .form-control;
+  text-align: center;
+  padding: 3px 5px;
+  color: $primary-color;
+  background-color: #FFF;
+  -webkit-text-fill-color: $primary-color !important;
+  -webkit-box-shadow:0 0 0 50px white inset;
+
+  &:focus, &:active {
+    outline: none;
+  }
+}

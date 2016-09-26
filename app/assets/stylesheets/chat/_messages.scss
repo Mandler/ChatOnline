@@ -1,0 +1,51 @@
+// Messages
+.header-text-muted {
+  color: #818a91;
+  font-size: 14px;
+}
+
+.date-text-muted {
+  color: #FFF;
+  font-size: 10px;
+}
+
+.right-card, .left-card {
+  @extend .card;
+  color: #FFF;
+  width: calc(50% - 20px);
+  display: block;
+  text-align: center;
+  color: #FFF;
+}
+
+.right-card {
+  float: right;
+  margin-left: 50%;
+  margin-right: 15px;
+  background-image: radial-gradient($primary-color, $dark-primary-color);
+
+  & .date-text-muted {
+    display: none;
+  }
+}
+
+.left-card {
+  float: left;
+  margin-right: 50%;
+  margin-left: 15px;
+  color: $dark-secondary-color;
+  background-color: $light-secondary-color;
+
+  .date-text-muted {
+    color: $dark-secondary-color;
+  }
+}
+
+#messages {
+  max-height: 450px;
+  overflow-y: auto;
+
+  .avatar {
+    margin: 0.5rem;
+  }
+}
