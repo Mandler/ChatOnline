@@ -1,7 +1,17 @@
 class ChatRoomsController < ApplicationController
   def index
     @chat_rooms = ChatRoom.find_by_title_or_author(params[:search]) || ChatRoom.all
-    # @chat_rooms = ChatRoom.find_by_current_user(current_user.id)
+    respond_to do |format|
+      format.html
+      format.json {
+        render json: @chat_rooms
+      }
+    end
+  end
+
+  def display_chat_rooms
+    @own_chat_rooms = ChatRoom.find_by_current_user(current_user.id)
+    render json: @own_chat_rooms
   end
 
   def new
