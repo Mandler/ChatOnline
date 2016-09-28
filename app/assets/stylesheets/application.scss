@@ -8,6 +8,14 @@
   background-color: $primary-color;
 }
 
+// Chat List
+#all_chat_rooms_button, #my_chat_rooms_button {
+  @extend .btn, .btn-success, .btn-sm;
+  float: right;
+  line-height: 20px;
+  margin: 12px 10px;
+}
+
 // Top menu
 .top-menu {
   @extend .navbar, .navbar-dark, .bg-primary;
