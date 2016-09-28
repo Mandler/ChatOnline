@@ -1,5 +1,7 @@
 %h1
   Chat rooms #{link_to 'Add chat room', new_chat_room_path, class: 'btn btn-primary btn-sm'}
+  %button#all_chat_rooms_button All Chat rooms
+  %button#my_chat_rooms_button My Chat rooms
 
-%ul
+%ul#chat_rooms_list
   = render @chat_rooms
