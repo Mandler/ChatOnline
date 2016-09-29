@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :chat_rooms, only: [:index, :new, :create, :show]
 
-  get '/display_chat_rooms', to:'chat_rooms#display_chat_rooms'
+  get '/display_chat_rooms', to:'chat_rooms#display_chat_rooms', defaults: {format: :json}
 
   mount ActionCable.server => '/cable'
 

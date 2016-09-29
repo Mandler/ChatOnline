@@ -10,8 +10,7 @@ class ChatRoomsController < ApplicationController
   end
 
   def display_chat_rooms
-    @own_chat_rooms = ChatRoom.find_by_current_user(current_user.id)
-    render json: @own_chat_rooms
+    render json: @own_chat_rooms = ChatRoom.find_by_current_user(current_user.id)
   end
 
   def new
