@@ -20,7 +20,7 @@ ready = ->
   $('#my_chat_rooms_button:not(.active)').on 'click', ->
     $.get '/display_chat_rooms', (data) ->
       $('#chat_rooms_list').html('')
-      for chat_room in data
+      for chat_room in data.chat_rooms
         $('#chat_rooms_list').append('<li><a href="/chat_rooms/' + chat_room.id + '">' + chat_room.title + '</li>')
 
 # Use script after page loaded event (AJAX or standard)
