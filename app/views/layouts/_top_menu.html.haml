@@ -5,7 +5,7 @@
   %ul.nav.navbar-nav.pull-xs-right
     - if user_signed_in?
       %li.nav-item
-        = link_to "Hello #{current_user.name}!", edit_user_registration_path, class: "top-nav-link"
+        = link_to "Hello #{current_user.nick}!", edit_user_registration_path, class: "top-nav-link"
       %li.nav-item
         = link_to 'Logout', destroy_user_session_path, :method => :delete, class: "top-nav-link"
     - else

@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :trackable, :validatable
 
-  # def name
-  #   email.split('@')[0]
-  # end
+  def nick
+    self.name.to_s == '' ? email.split('@')[0] : self.name
+  end
 end
