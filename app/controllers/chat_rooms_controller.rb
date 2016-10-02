@@ -1,12 +1,6 @@
 class ChatRoomsController < ApplicationController
   def index
     @chat_rooms = ChatRoom.find_by_title_or_author(params[:search]) || ChatRoom.all
-    respond_to do |format|
-      format.html
-      format.json {
-        render json: @chat_rooms
-      }
-    end
   end
 
   def display_chat_rooms
