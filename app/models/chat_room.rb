@@ -1,6 +1,9 @@
 class ChatRoom < ApplicationRecord
+  extend FriendlyId
   belongs_to :user
   has_many :messages, dependent: :destroy
+
+  friendly_id :title, use: :slugged
 
   scope :find_by_title, ->(title) { joins(:user).where("title LIKE ?", "%#{title}%") }
   scope :created_by, ->(email) { joins(:user).where("users.email LIKE ?", "%#{email}%") }

@@ -27,6 +27,8 @@ gem 'warden'
 
 gem 'haml-rails', '~> 0.9'
 
+gem 'friendly_id', '~> 5.1.0'
+
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
