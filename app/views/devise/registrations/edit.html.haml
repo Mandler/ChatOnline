@@ -13,6 +13,8 @@
     .form-group
       = f.date_field :date_of_birth, class: 'form-control'
     .form-group
+      = f.select :is_female, [['Mężczyzna', false],['Kobieta', true]]
+    .form-group
       = f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: 'New Password'
       - if @minimum_password_length
         %br/
