@@ -1,17 +1,10 @@
 #messages
   #friends-list
     - @users.each do |user|
-      .friend-link
-        = user.nick
-        = link_to "Send Message", "#", class: "btn btn-success btn-sm new-conversation", "data-sid" => current_user.id, "data-rip" => user.id
-
-  .text-block
-    .messages-block Some Messages
-    .input-sender Input Sender
-
-  .text-block
-    .messages-block Some Messages
-    .input-sender Input Sender
+      - if user.id != current_user.id
+        .friend-link
+          = user.nick
+          = link_to "Send Message", "#", class: "btn btn-success btn-sm new-conversation", "data-sid" => current_user.id, "data-rip" => user.id
 
   .text-block
     .messages-block Some Messages

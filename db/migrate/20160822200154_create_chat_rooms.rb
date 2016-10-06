@@ -7,7 +7,7 @@ class CreateChatRooms < ActiveRecord::Migration[5.0]
       t.timestamps
     end
 
-    add_index :conversations, :sender_id
-    add_index :conversations, :recipient_id
+    add_index :chat_rooms, :sender_id
+    add_index :chat_rooms, :recipient_id
   end
 end

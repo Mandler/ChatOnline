@@ -5,8 +5,4 @@
 
 -# %ul#chat_rooms_list
 -#   = render @chat_rooms
-
-- @users.each do |user|
-  %p
-    = user.nick
-    = link_to "Send Message", "#", class: "btn btn-success btn-sm new-conversation", "data-sid" => current_user.id, "data-rip" => user.id
+%h2 List of News from users in future

@@ -3,7 +3,7 @@ jQuery(document).on 'turbolinks:load', ->
 
   App.global_chat = App.cable.subscriptions.create {
       channel: "ChatRoomsChannel"
-      chat_room_id: messages.data('chat-room-id')
+      chat_room_id: 1
     },
     connected: ->
       # Called when the subscription is ready for use on the server
@@ -33,4 +33,10 @@ jQuery(document).on 'turbolinks:load', ->
       App.global_chat.send_message textarea.val(), messages.data('chat-room-id')
       textarea.val('')
     e.preventDefault()
+    return false
+
+  $('.new-conversation').click ->
+    sender_id = $(this).data('sid');
+    recipient_id = $(this).data('rip');
+    $.post('/chat_rooms', { sender_id: sender_id, recipient_id: recipient_id })
     return false
