@@ -13,3 +13,4 @@
     .page-content
       .col-xs-12
         = yield
+    = render 'layouts/bottom_messages' if user_signed_in?

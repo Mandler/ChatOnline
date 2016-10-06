@@ -42,10 +42,54 @@
 }
 
 #messages {
-  max-height: 450px;
-  overflow-y: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 
-  .avatar {
-    margin: 0.5rem;
+  #friends-list {
+    float: right;
+    position: relative;
+    height: 400px;
+    width: 300px;
+    background-color: #818a91;
+    color: lightblue;
+    margin-top: 5px;
+
+    .friend-link {
+      width: 100%;
+      float: left;
+      padding: 10px;
+
+      .new-conversation {
+        float: right;
+      }
+    }
+  }
+
+  .text-block {
+    float: right;
+    position: relative;
+    height: 300px;
+    width: 250px;
+    background-color: #9c9;
+    color: lightblue;
+    margin: 105px 5px 0 5px;
+    border: 1px solid #9c9;
+
+    .messages-block {
+      position: relative;
+      width: 100%;
+      height: calc(100% - 30px);
+      padding: 10px;
+      background-color: #FFF;
+    }
+
+    .input-sender {
+      position: relative;
+      width: 100%;
+      height: 30px;
+      bottom: 0;
+    }
   }
 }

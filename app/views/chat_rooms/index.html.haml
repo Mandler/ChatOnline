@@ -1,7 +1,12 @@
-%h1
-  Chat rooms #{link_to 'Add chat room', new_chat_room_path, class: 'btn btn-primary btn-sm'}
-  %button#all_chat_rooms_button All Chat rooms
-  %button#my_chat_rooms_button My Chat rooms
+-# %h1
+-#   Chat rooms #{link_to 'Add chat room', new_chat_room_path, class: 'btn btn-primary btn-sm'}
+-#   %button#all_chat_rooms_button All Chat rooms
+-#   %button#my_chat_rooms_button My Chat rooms
 
-%ul#chat_rooms_list
-  = render @chat_rooms
+-# %ul#chat_rooms_list
+-#   = render @chat_rooms
+
+- @users.each do |user|
+  %p
+    = user.nick
+    = link_to "Send Message", "#", class: "btn btn-success btn-sm new-conversation", "data-sid" => current_user.id, "data-rip" => user.id
