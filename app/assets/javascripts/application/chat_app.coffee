@@ -23,5 +23,10 @@ ready = ->
       for chat_room in data.chat_rooms
         $('#chat_rooms_list').append('<li><a href="/chat_rooms/' + chat_room.slug + '">' + chat_room.title + '</li>')
 
+  # After click on quit button (from messages) remove chat
+  $(document).on 'click', '.quit-button', ->
+    chat_room_id = $(this).data('chat-room-to-close')
+    $(document).find("#chat_room_#{chat_room_id}").remove()
+
 # Use script after page loaded event (AJAX or standard)
 $(document).on 'turbolinks:load', ready

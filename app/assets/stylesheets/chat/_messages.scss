@@ -42,7 +42,7 @@
 }
 
 #messages {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
@@ -77,13 +77,32 @@
     margin: 105px 5px 0 5px;
     border: 1px solid #9c9;
 
+    .informations {
+      color: #FFF;
+      font-size: 12px;
+      margin-left: 10px;
+
+      .quit-button {
+        float: right;
+        height: 20px;
+        line-height: 20px;
+        margin-right: 10px;
+
+        &:hover {
+          color: red;
+          cursor: pointer;
+        }
+      }
+    }
+
     .messages-block {
       position: relative;
       width: 100%;
-      height: calc(100% - 30px);
+      height: calc(100% - 50px);
       padding: 10px;
       background-color: #FFF;
-      overflow: auto;
+      overflow-y: auto;
+      overflow-x: hidden;
     }
 
     .input-sender {

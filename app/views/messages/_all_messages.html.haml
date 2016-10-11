@@ -1,8 +1,7 @@
-%div{:class => "#{cookies.signed['user.id'] == message.user.id ? 'right-card' : 'left-card'}"}
+.card{:class => "#{cookies.signed['user.id'] == message.user_id ? 'right-card' : 'left-card'}"}
   .card-block
     .card-text
       %span.date-text-muted
-        = message.user.name
-        at #{message.timestamp} says
+        = message.timestamp
         %br/
       = message.body
