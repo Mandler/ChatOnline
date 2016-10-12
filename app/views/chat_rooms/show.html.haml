@@ -8,4 +8,4 @@
   .input-sender
     = form_for @message, url: '#', class: 'new_message' do |f|
       = hidden_field_tag 'chat_room_id', @chat_room.id
-      = f.text_field :body, class: 'form-control form-control-sm', placeholder: 'Wpisz wiadomość...'
+      = f.text_field :body, class: 'form-control form-control-sm', placeholder: 'Write Message...'
