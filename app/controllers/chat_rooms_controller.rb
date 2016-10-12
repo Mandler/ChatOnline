@@ -4,7 +4,6 @@ class ChatRoomsController < ApplicationController
   layout false, only: :show
 
   def show
-    # @chat_room = ChatRoom.includes(:messages).find(params[:id])
     @chat_room = ChatRoom.find(params[:id])
   end
 
