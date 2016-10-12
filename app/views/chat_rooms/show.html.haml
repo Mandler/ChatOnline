@@ -1,6 +1,6 @@
 .text-block{"data-chat-room-id" => "#{@chat_room.id}", id: "chat_room_#{@chat_room.id}"}
   .informations
-    = @chat_room.sender.nick
+    = current_user.nick == @chat_room.sender.nick ? @chat_room.recipient.nick : @chat_room.sender.nick
     .quit-button{"data-chat-room-to-close" => "#{@chat_room.id}"} X
   .messages-block
     - @chat_room.messages.each do |message|
