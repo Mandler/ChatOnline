@@ -3,6 +3,7 @@ class ChatRoom < ApplicationRecord
   belongs_to :recipient, :foreign_key => :recipient_id, class_name: 'User'
 
   has_many :messages, dependent: :destroy
+  has_many :last_messages, -> { order('created_at DESC').limit(10)  }, class_name: 'Message'
 
   validates_uniqueness_of :sender_id, :scope => :recipient_id
 
