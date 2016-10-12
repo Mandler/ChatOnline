@@ -1,5 +1,5 @@
 jQuery(document).on 'turbolinks:load', ->
-  messages_to_bottom = -> $(document).find('.messages-block').scrollTop($('.messages-block').prop("scrollHeight"))
+  messages_to_bottom = (id) -> $(document).find("#chat_room_#{id} .messages-block").scrollTop($("#chat_room_#{id} .messages-block").prop("scrollHeight"))
 
   $(document).on 'submit', '.new_message', (e) ->
     $this = $(this)
@@ -18,7 +18,7 @@ jQuery(document).on 'turbolinks:load', ->
       if $("#chat_room_#{chat_id}").length == 0
         $.get "/chat_room_show/#{chat_id}", (data) ->
           $('#messages').append data
-          messages_to_bottom()
+          messages_to_bottom(chat_id)
           App.global_chat = App.cable.subscriptions.create {
             channel: "ChatRoomsChannel",
             chat_room_id: chat_id
@@ -41,7 +41,7 @@ jQuery(document).on 'turbolinks:load', ->
             else
               message = message.removeClass('card').addClass('left-card')
             $(document).find("#chat_room_#{chat_id} .messages-block").append message
-            messages_to_bottom()
+            messages_to_bottom(chat_id)
 
           send_message: (message, chat_room_id) ->
             @perform 'send_message', message: message, chat_room_id: chat_room_id
