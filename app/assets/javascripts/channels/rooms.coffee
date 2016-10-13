@@ -23,12 +23,6 @@ jQuery(document).on 'turbolinks:load', ->
             channel: "ChatRoomsChannel",
             chat_room_id: chat_id
           },
-          connected: ->
-            # Called when the subscription is ready for use on the server
-
-          disconnected: ->
-            # Called when the subscription has been terminated by the server
-
           userIsCurrentUser: (user_id) ->
             parseInt(user_id) == parseInt($('meta[name=current-user]').attr('id'))
 

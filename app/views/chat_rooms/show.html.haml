@@ -3,7 +3,7 @@
     = current_user.nick == @chat_room.sender.nick ? @chat_room.recipient.nick : @chat_room.sender.nick
     .quit-button{"data-chat-room-to-close" => "#{@chat_room.id}"} X
   .messages-block
-    - @chat_room.last_messages.each do |message|
+    - @chat_room.last_messages.reverse.each do |message|
       = render partial: 'messages/all_messages', locals: {message: message}
   .input-sender
     = form_for @message, url: '#', class: 'new_message' do |f|
