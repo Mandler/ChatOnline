@@ -5,6 +5,7 @@
     %title
       Chat #{yield(:page_title)}
     = csrf_meta_tags
+    = action_cable_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     %meta{:id => "#{current_user.try(:id)}", :name => "current-user"}/
