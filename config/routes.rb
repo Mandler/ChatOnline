@@ -7,6 +7,10 @@ Rails.application.routes.draw do
 
   get '/chat_room_show/:id', to: 'chat_rooms#show'
 
+  get '/params_form', to: 'chat_rooms#params_form'
+
+  post '/params_form', to: 'chat_rooms#controll_params_form'
+
   mount ActionCable.server => '/cable'
 
   root 'chat_rooms#index'

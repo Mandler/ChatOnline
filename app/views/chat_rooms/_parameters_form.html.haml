@@ -1,0 +1,6 @@
+= form_tag('/params_form', method: 'post') do
+  - 1.upto(6) do |index|
+    %p
+      %span= "Input nr #{index}"
+      = text_field_tag "params_to_check[]"
+  = submit_tag('To Controller')
