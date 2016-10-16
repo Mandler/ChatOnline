@@ -11,7 +11,12 @@ class Message < ApplicationRecord
   end
 
   def all_performs
+    recipient_id = self.chat_room.recipient_id
+    sender_id = self.chat_room.sender_id
+    send_from = self.user.id
+    send_to = send_from == sender_id ? recipient_id : sender_id
+
     MessageBroadcastJob.perform_later(self)
-    NotificationBroadcastJob.perform_later()
+    NotificationBroadcastJob.perform_later(send_to, send_from)
   end
 end
