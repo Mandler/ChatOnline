@@ -2,6 +2,6 @@ class NotificationBroadcastJob < ApplicationJob
   queue_as :default
 
   def perform
-    ActionCable.server.broadcast_to 'NotificationChannel', 'Message'
+    ActionCable.server.broadcast 'NotificationChannel', 'Message'
   end
 end

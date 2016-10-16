@@ -22,6 +22,7 @@ gem 'devise'
 gem 'bootstrap', '~> 4.0.0.alpha3.1'
 
 gem 'redis', '~> 3.2'
+gem 'sidekiq', '~> 4.1', '>= 4.1.4'
 
 gem 'warden'
 
