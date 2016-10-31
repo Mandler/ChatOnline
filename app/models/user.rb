@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  include AccountsLogs
+
   has_many :chat_rooms, foreign_key: :sender_id
   has_many :messages
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable

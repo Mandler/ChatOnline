@@ -1,0 +1,5 @@
+%h2 All logs
+
+%ul
+  - @logs.each do |log|
+    %li= "#{log.message} at #{log.created_at}"

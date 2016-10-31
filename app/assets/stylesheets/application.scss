@@ -22,6 +22,10 @@
   border-radius: 0;
   box-shadow: 0 10px 20px -10px #000;
 
+  .pull-right {
+    float: right;
+  }
+
   .top-nav-link {
     color: #FFF;
     display: block;
@@ -40,7 +44,7 @@
   }
 
   .search-form-inline {
-    @extend .form-inline, .pull-xs-right;
+    @extend .form-inline;
     padding: 5px 20px;
   }
 }

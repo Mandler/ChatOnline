@@ -19,7 +19,7 @@ gem 'coffee-rails', '~> 4.2'
 # Use Devise for authentication
 gem 'devise'
 # Use Bootstrap for style
-gem 'bootstrap', '~> 4.0.0.alpha3.1'
+gem 'bootstrap', '~> 4.0.0.alpha5'
 
 gem 'redis', '~> 3.2'
 gem 'sidekiq', '~> 4.1', '>= 4.1.4'

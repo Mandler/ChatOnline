@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   resources :chat_rooms, only: [:index, :new, :create] #Delete show route
 
+  resources :logs, only: :index
+
   get '/display_chat_rooms', to: 'chat_rooms#display_chat_rooms', defaults: { format: :json }
 
   get '/chat_room_show/:id', to: 'chat_rooms#show'
