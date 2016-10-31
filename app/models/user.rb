@@ -1,11 +1,11 @@
 class User < ApplicationRecord
-  include AccountsLogs
+    include AccountsLogs
 
-  has_many :chat_rooms, foreign_key: :sender_id
-  has_many :messages
-  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
+    has_many :chat_rooms, foreign_key: :sender_id
+    has_many :messages
+    devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
 
-  def nick
-    self.name.to_s == '' ? email.split('@')[0] : self.name
-  end
+    def nick
+        name.to_s == '' ? email.split('@')[0] : name
+    end
 end
